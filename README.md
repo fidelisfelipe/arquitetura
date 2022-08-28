@@ -55,7 +55,8 @@ Aqui, o cliente e o servidor estão em máquinas completamente separadas ou são
 
 **Object Brokers**
 > *CORBA*-A arquitetura de agente de objeto mais comum é chamada de Arquitetura Common Object Request Broker. Apesar de ter a palavra arquitetura em seu nome, CORBA está mais intimamente relacionado com um conjunto de padrões. Concebido pelo Grupo de Gerenciamento de Objetos, ou OMG, o CORBA tem como objetivo fornecer um esboço do que deve ser incluído em corretores de objetos. O padrão não é um guia de instruções para implementação.
-Como existem inúmeras linguagens orientadas a objetos, o principal objetivo da CORBA é criar uma especificação que permita que os corretores de objetos sejam independentes das linguagens de programação usadas para implementar clientes e servidores.
+Como existem inúmeras linguagens orientadas a objetos, o principal objetivo da CORBA é criar uma especificação que permita que os corretores de objetos sejam independentes das linguagens de programação usadas para implementar clientes e servidores. CORBA especifica que os corretores de objetos devem ser capazes de funcionar independentemente do sistema operacional. 
+A intenção é que, se um sistema requer middleware para manipular a computação distribuída, os desenvolvedores não precisam ser restritos aos requisitos de idioma e sistema operacional do middleware.
 
 
 
