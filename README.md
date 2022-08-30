@@ -140,9 +140,48 @@ A[Service Provider] -- notification--> B[Service Requester]
 ### UDDI
 > - Universal Description, Discovery and Integration, Descrição, Descoberta e Integração Universais - Lançado em 2000, define um padrão de publicar e descobrir informações sobre serviços da Web.
 > Hoje, gerenciado pela OASIS. Não é um componente obrigatório para implementação de serviços web. Tem o papel de Reunir provedores de serviços e solicitantes de serviços mas também tem o papel de publicar e manter esses serviços.
-> As informações ~soa divididas em 3 categorias: 
+> As informações são divididas em 3 categorias: 
 > - Páginas brancas - Informações básicas sobre o negócio como nome, descrição e telefone.
 > - Páginas amarelas - Informações hierarquicas sobre o serviço da empresa e subconjuntos.
 > - Páginas verdes - Informações técnicas de como utilizar o serviço.
 > O UDDI permite que os serviços sejam publicados e descobertos, mas um registro UDDI também é um provedor de serviços!
 > Alguns dos serviços que oferece são adicionar negócios ou serviços ou alterar informações sobre serviços.
+
+**Rest**
+
+> *RE*presentational *S*tate *T*ransfer - Transferência de estado representacional
+> Ele é usado em aplicativos distribuídos usando HTTP para enviar mensagens para se comunicar entre componentes. Nos termos mais básicos, REST é uma arquitetura cliente-servidor baseada em um design de resposta de solicitação. O cliente envia a solicitação e o servidor responde. No entanto, uma característica específica do REST é que a comunicação é baseada em recursos. Isso significa que as mensagens são enviadas como representações de recursos. Um recurso pode ser qualquer pedaço de informação que é auto-suficiente. Exemplos de recursos são documentos, imagens, representações de objetos e assim por diante.
+
+###São 5 as restriçoes de definição da arquitetura Rest
+
+* Cliente-Servidor
+> REST tem cinco restrições que estabelecem suas características definidoras. A primeira restrição é que REST é uma arquitetura cliente-servidor. Para atualizar, uma arquitetura cliente-servidor aplica a separação de preocupações por ter funções com responsabilidades específicas, o cliente e o servidor, que interagem entre si. O servidor fornece serviços ao cliente, como criar ou manipular dados, e o cliente fornece aos usuários uma interface de usuário para acessar esses serviços. Essa separação permite que os aplicativos REST sejam altamente escaláveis. Ele permite que o desenvolvimento do cliente e do servidor ocorra independentemente um do outro. Como o cliente não está preocupado com o armazenamento ou manipulação de dados, ele pode ser melhorado para fornecer aos usuários uma interface de usuário simples e rápida. O servidor também pode ser mais escalável, permitindo que conjuntos maiores de dados sejam manipulados, porque é libertado da necessidade de implementar quaisquer responsabilidades do cliente.
+
+* Sistema em Camadas
+> REST é um sistema em camadas. Ele pode consistir em várias camadas arquitetônicas de software ou hardware chamadas pelo cliente e servidor. Essas camadas podem ser usadas para melhorar o desempenho, traduzir mensagens, gerenciar tráfego e muito mais. Isso ajuda a melhorar a reutilização dos serviços Web REST porque camadas podem ser adicionadas e removidas com base nos serviços necessários do cliente.
+
+* Iterações Apátrias (Stateless)
+> As interações devem ser apátridas. Isso significa que o servidor não salva informações sobre o estado atual do cliente ou solicitação anterior feita pelo cliente. Além de quando uma solicitação é feita, o servidor não precisa saber que o lado do cliente existe. Além disso, cada solicitação é independente um do outro e deve conter todas as informações necessárias para que o servidor entenda e responda à solicitação. Se houver alguma informação necessária pelo servidor para concluir uma solicitação, o cliente deve enviá-la sempre que o servidor não dependerá de informações enviadas de solicitações anteriores. Novamente, esta restrição melhora o desempenho dos serviços Web porque o servidor não tem de armazenar quaisquer informações sobre os estados actuais dos clientes no sistema. Sem a sobrecarga, o servidor pode fornecer melhor desempenho aos clientes. No entanto, isso impõe restrições significativas à maneira como um cliente e um servidor se comunicam. Toda vez que um cliente envia uma solicitação para um servidor, ele deve fornecer e armazenar informações sobre seu estado atual para manter essa restrição sem estado. Por exemplo, se a autenticação for necessária por um servidor para que um cliente tenha acesso aos dados, o lado do cliente deve enviar essas informações de autenticação em cada solicitação.
+
+* Cache
+> Clientes podem armazenar em cache. Isso significa que os clientes podem manter uma cópia local de uma resposta do servidor a ser usada para solicitações posteriores. Basicamente, toda vez que um servidor responde a uma solicitação de cliente, o servidor adiciona informações à resposta para rotulá-la como armazenável em cache ou não armazenável em cache. Ele faz isso para melhorar o desempenho para que ele possa reduzir o número de solicitações para os mesmos recursos. Isso também pode aliviar alguns dos impactos negativos da aplicação da restrição apátrida. O servidor decide para o lado do cliente quais informações devem ser temporariamente salvas e o que pode ser excluído após o uso, para que o cliente não mantenha quaisquer dados redundantes ou inúteis.
+
+* Interface Uniforme
+> Existe uma interface uniforme para comunicação entre o cliente e o servidor. Métodos específicos são compreendidos. REST usou os métodos HTTP comuns. GET, PUT, POST e DELETE para comunicar as diferentes ações que o cliente deseja executar no recurso. Em segundo lugar, o recurso deve ser identificado na solicitação usando um identificador de recurso uniforme específico, ou URI. 
+
+###boas práticas na construção de API Rest
+
+> - Use apenas substantivos para seu URI. 
+> - Os métodos GET não devem alterar o estado dos seus recursos. 
+> - Use substantivos plurais para seu URI. 
+> - Use sub-recursos para relacionamentos entre recursos.
+> - Use cabeçalhos HTTP para especificar o formato de saída de entrada.
+> - Forneça aos usuários filtragem e paginação para coleções. 7, versão da sua API. 8, forneça códigos de status HTTP adequados.
+
+**Microservices**
+
+> Os microsserviços podem ser considerados como uma variação de SOA aplicada em uma escala de aplicativos em vez de escala corporativa. Além disso, alguns princípios SOA foram refinados para oferecer melhor suporte aos sistemas de escala de aplicativos. O estilo arquitetônico de microsserviços é a forma de compor microsserviços para produzir aplicações complexas. Um microsserviço é o processo que é responsável por executar uma única tarefa independente. Normalmente, um microsserviço é criado para executar uma capacidade comercial específica. Por exemplo, em um aplicativo, um microsserviço pode ser responsável pela implementação de um recurso de pesquisa. Outro microsserviço pode implementar um recurso de recomendação. E ainda outro microsserviço pode ser responsável pela implementação de um recurso de classificação. Os microsserviços são desenvolvidos e existem de forma independente. Mas, em última análise, eles são compostos juntos para fornecer a funcionalidade geral de um aplicativo. Muitas vezes, cada microsserviço não obedece a um estilo arquitetônico completo em camadas porque os microsserviços são compostos com outros microsserviços e nem sempre destinados aos usuários finais. As camadas de apresentação e aplicação podem nem sempre estar presentes, ou seja, geralmente cada microsserviço controla e gerencia seus próprios dados. Como resultado, o aplicativo geral geralmente não seguirá um estilo arquitetônico em camadas. 
+
+###Desvantagens
+
+> Um aplicativo composto por microsserviços é o sistema distribuído habilitado por meio de comunicação assíncrona. Isso significa que algum gerenciamento centralizado de todos os microsserviços será necessário para coordenar todos os microsserviços. Os bancos de dados provavelmente serão distribuídos por vários microsserviços, e as transações podem abranger vários microsserviços. Sem algum gerenciamento central, o estado geral do aplicativo poderia se tornar inconsistente e resultar em erros. Testar um sistema distribuído é mais complexo, devido à mudança das condições de teste. Difícil de reproduzir bugs pode ser introduzido a partir das interações complexas entre microsserviços. Outra coisa a considerar é como o aplicativo irá lidar quando um microsserviço falhar e não há outra instância do microsserviço para tomar seu lugar. Os outros microsserviços no aplicativo devem ser robustos o suficiente para lidar com a falha graciosamente, pois eles podem confiar diretamente no microsserviço com falha.
