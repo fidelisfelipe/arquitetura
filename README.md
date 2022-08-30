@@ -89,7 +89,7 @@ A intenção é que, se um sistema requer middleware para manipular a computaç�
 > - SOAP é o padrão usado para invocar serviços da web - Robusto, Modular e Extensível.
 > - A UDDI reúne provedores de serviços e solicitantes de serviços, oferecendo publicação e descoberta.
 
-### SOAP
+## SOAP
 > - Simple Object Access Protocol -  é um protocolo padrão projetado originalmente para possibilitar a comunicação entre aplicações desenvolvidas em diferentes linguagens e plataformas.
 
 **Estilo comum para invocações SOAP**
@@ -137,7 +137,7 @@ graph LR
 A[Service Provider] -- notification--> B[Service Requester]
 ```
 
-### UDDI
+## UDDI
 > - Universal Description, Discovery and Integration, Descrição, Descoberta e Integração Universais - Lançado em 2000, define um padrão de publicar e descobrir informações sobre serviços da Web.
 > Hoje, gerenciado pela OASIS. Não é um componente obrigatório para implementação de serviços web. Tem o papel de Reunir provedores de serviços e solicitantes de serviços mas também tem o papel de publicar e manter esses serviços.
 > As informações são divididas em 3 categorias: 
@@ -147,12 +147,12 @@ A[Service Provider] -- notification--> B[Service Requester]
 > O UDDI permite que os serviços sejam publicados e descobertos, mas um registro UDDI também é um provedor de serviços!
 > Alguns dos serviços que oferece são adicionar negócios ou serviços ou alterar informações sobre serviços.
 
-**Rest**
+## REST
 
 > *RE*presentational *S*tate *T*ransfer - Transferência de estado representacional
 > Ele é usado em aplicativos distribuídos usando HTTP para enviar mensagens para se comunicar entre componentes. Nos termos mais básicos, REST é uma arquitetura cliente-servidor baseada em um design de resposta de solicitação. O cliente envia a solicitação e o servidor responde. No entanto, uma característica específica do REST é que a comunicação é baseada em recursos. Isso significa que as mensagens são enviadas como representações de recursos. Um recurso pode ser qualquer pedaço de informação que é auto-suficiente. Exemplos de recursos são documentos, imagens, representações de objetos e assim por diante.
 
-### São 5 as restriçoes de definição da arquitetura Rest
+**São 5 as restriçoes de definição da arquitetura Rest**
 
 * Cliente-Servidor
 > REST tem cinco restrições que estabelecem suas características definidoras. A primeira restrição é que REST é uma arquitetura cliente-servidor. Para atualizar, uma arquitetura cliente-servidor aplica a separação de preocupações por ter funções com responsabilidades específicas, o cliente e o servidor, que interagem entre si. O servidor fornece serviços ao cliente, como criar ou manipular dados, e o cliente fornece aos usuários uma interface de usuário para acessar esses serviços. Essa separação permite que os aplicativos REST sejam altamente escaláveis. Ele permite que o desenvolvimento do cliente e do servidor ocorra independentemente um do outro. Como o cliente não está preocupado com o armazenamento ou manipulação de dados, ele pode ser melhorado para fornecer aos usuários uma interface de usuário simples e rápida. O servidor também pode ser mais escalável, permitindo que conjuntos maiores de dados sejam manipulados, porque é libertado da necessidade de implementar quaisquer responsabilidades do cliente.
@@ -169,7 +169,7 @@ A[Service Provider] -- notification--> B[Service Requester]
 * Interface Uniforme
 > Existe uma interface uniforme para comunicação entre o cliente e o servidor. Métodos específicos são compreendidos. REST usou os métodos HTTP comuns. GET, PUT, POST e DELETE para comunicar as diferentes ações que o cliente deseja executar no recurso. Em segundo lugar, o recurso deve ser identificado na solicitação usando um identificador de recurso uniforme específico, ou URI. 
 
-### Boas práticas na construção de API Rest
+**Boas práticas na construção de API Rest**
 
 > - Use apenas substantivos para seu URI. 
 > - Os métodos GET não devem alterar o estado dos seus recursos. 
@@ -178,10 +178,10 @@ A[Service Provider] -- notification--> B[Service Requester]
 > - Use cabeçalhos HTTP para especificar o formato de saída de entrada.
 > - Forneça aos usuários filtragem e paginação para coleções. 7, versão da sua API. 8, forneça códigos de status HTTP adequados.
 
-**Microservices**
+## Microservices
 
 > Os microsserviços podem ser considerados como uma variação de SOA aplicada em uma escala de aplicativos em vez de escala corporativa. Além disso, alguns princípios SOA foram refinados para oferecer melhor suporte aos sistemas de escala de aplicativos. O estilo arquitetônico de microsserviços é a forma de compor microsserviços para produzir aplicações complexas. Um microsserviço é o processo que é responsável por executar uma única tarefa independente. Normalmente, um microsserviço é criado para executar uma capacidade comercial específica. Por exemplo, em um aplicativo, um microsserviço pode ser responsável pela implementação de um recurso de pesquisa. Outro microsserviço pode implementar um recurso de recomendação. E ainda outro microsserviço pode ser responsável pela implementação de um recurso de classificação. Os microsserviços são desenvolvidos e existem de forma independente. Mas, em última análise, eles são compostos juntos para fornecer a funcionalidade geral de um aplicativo. Muitas vezes, cada microsserviço não obedece a um estilo arquitetônico completo em camadas porque os microsserviços são compostos com outros microsserviços e nem sempre destinados aos usuários finais. As camadas de apresentação e aplicação podem nem sempre estar presentes, ou seja, geralmente cada microsserviço controla e gerencia seus próprios dados. Como resultado, o aplicativo geral geralmente não seguirá um estilo arquitetônico em camadas. 
 
-### Desvantagens
+**Desvantagens**
 
 > Um aplicativo composto por microsserviços é o sistema distribuído habilitado por meio de comunicação assíncrona. Isso significa que algum gerenciamento centralizado de todos os microsserviços será necessário para coordenar todos os microsserviços. Os bancos de dados provavelmente serão distribuídos por vários microsserviços, e as transações podem abranger vários microsserviços. Sem algum gerenciamento central, o estado geral do aplicativo poderia se tornar inconsistente e resultar em erros. Testar um sistema distribuído é mais complexo, devido à mudança das condições de teste. Difícil de reproduzir bugs pode ser introduzido a partir das interações complexas entre microsserviços. Outra coisa a considerar é como o aplicativo irá lidar quando um microsserviço falhar e não há outra instância do microsserviço para tomar seu lugar. Os outros microsserviços no aplicativo devem ser robustos o suficiente para lidar com a falha graciosamente, pois eles podem confiar diretamente no microsserviço com falha.
